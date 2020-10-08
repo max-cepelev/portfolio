@@ -1,0 +1,23 @@
+.sidepanel {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    top: 230px;
+    left: 3%;
+    height: 340px;
+    z-index: 3;
+    top: 230px;
+    &__divider {
+        width: 2px;
+        height: 70px;
+        margin-top: 12px;
+        background-color:#000;
+    }
+    &__text {
+        img {
+            height: 150px;
+        }
+    }
+}
