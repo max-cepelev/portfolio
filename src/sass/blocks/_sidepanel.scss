@@ -9,6 +9,13 @@
     height: 340px;
     z-index: 3;
     top: 230px;
+    &__link {
+        transition: 0.4s all;
+        &:hover {
+            transition: 0.4s all;
+            transform: rotate(90deg);
+        }
+    }
     &__divider {
         width: 2px;
         height: 70px;
