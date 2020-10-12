@@ -40,12 +40,41 @@
                 &:after {
                     content: '';
                     width: 1px;
-                    height: 100%;
+                    height: calc(100% + 8px);
                     position: absolute;
                     top: -8px;
                     left: 0;
                     background-color: #000;
                 }
+            }
+        }
+    }
+    &__item {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 43px;
+            top: 62px;
+            background-color: #000;
+        }
+        &-head {
+            position: relative;
+            padding: 45px 0 0 100px;
+        }
+        &-descr {
+            padding-left: 43px;
+            margin-top: 12px;
+        }
+        &-icon {
+            @include before_circle;
+            position: absolute;
+            top: 53px;
+            left: 43px;
+            img {
+                margin-top: 5px;
+                margin-left: 17px;
             }
         }
     }
