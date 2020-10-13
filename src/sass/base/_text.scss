@@ -1,7 +1,5 @@
 .title {
     font-weight: bold;
-    font-size: 36px;
-    line-height: 60px;
     color: #000000;
     margin-bottom: 0;
     &_fs14 {
@@ -12,10 +10,25 @@
         font-size: 16px;
         line-height: 24px;
         @include before_circle;
+        &-center {
+            text-align: center;
+            &:before {
+                top: -6px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
     }
     &_fs20 {
         font-size: 20px;
         line-height: 30px;
+    }
+    &_fs36 {
+        font-size: 36px;
+        line-height: 60px;
+        &-center {
+            text-align: center;
+        }
     }
     &_fs48 {
         font-size: 48px;
