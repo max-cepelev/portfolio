@@ -9,3 +9,10 @@ humburger.addEventListener('click', () => {
 closeElem.addEventListener('click', () =>{ 
     menu.classList.remove('active');
 });
+
+const counters = document.querySelectorAll('.skills__levels-percent'),
+        lines = document.querySelectorAll('.skills__levels-line span');
+
+counters.forEach( (item, i) => {
+    lines[i].style.width = item.innerHTML;
+});
