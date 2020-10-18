@@ -1,0 +1,113 @@
+@media (max-width: 1400px) {
+    .sidepanel {
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .about {
+        &_grid {
+            grid-template-columns: 400px 520px;
+            column-gap: 40px;
+        }
+        &__skills {
+            grid-template: repeat(2, minmax(115px, auto))/repeat(2, 250px);
+            column-gap: 20px;
+        }
+        &__item {
+            grid-template-columns: 40px 195px;
+            column-gap: 15px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .about {
+        &_grid {
+            grid-template-columns: 300px 380px;
+            column-gap: 40px;
+        }
+        &__skills {
+            grid-template-columns: 380px;
+            grid-auto-rows: minmax(115px, auto);
+        }
+        &__item {
+            grid-template-columns: 40px 320px;
+            column-gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .promo__title {
+        width: 380px;
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .about {
+        padding-top: 40px;
+        &_grid {
+            grid-template: 400px auto auto/1fr;
+        }
+        &__photo {
+            grid-row: 1/2;
+        }
+        &__skills {
+            grid-template-columns: repeat(2, 260px);
+        }
+        &__item {
+            grid-template-columns: 40px 210px;
+            column-gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .promo {
+        background: url('../img/main_bg.jpg') no-repeat 58%/cover;
+        &__title {
+            width: 300px;
+            font-size: 22px;
+        }
+        &__btns {
+            margin-top: 30px;
+        }
+    }
+    .humburger {
+        right: 20px;
+    }
+    .menu {
+        &__block {
+            width: 250px;
+        }
+        &__list {
+            padding-left: 55px;
+        }
+    }
+    .about {
+        padding-top: 40px;
+        .title_fs36 {
+            font-size: 24px;
+        }
+        &_grid {
+            grid-template: 340px auto auto/1fr;
+        }
+        &__skills {
+            grid-template-columns: 1fr;
+        }
+        
+    }
+}

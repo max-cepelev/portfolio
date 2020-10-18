@@ -129,7 +129,7 @@
             </div>
         </div>
     </section>
-    <section class="exp">
+    <!-- <section class="exp">
         <div class="container">
             <h2 class="title title_fs16 title_fs16-center">Опыт</h2>
             <div class="title title_fs36 title_fs36-center">Чем я буду полезен</div>
@@ -343,23 +343,29 @@
                     <h3 class="title title_fs14">Или оставьте ваши данные и я сам вам напишу:</h3>
                     <form action="#" class="descr descr_fs12 contacts__form">
                         <div class="contacts__input">
-                            <input name="name" id="name" type="text">
+                            <input required name="name" id="name" type="text">
                             <label for="name">Ваше имя</label>
                         </div>
                         <div class="contacts__input">
-                            <input name="email" id="email" type="email">
+                            <input required name="email" id="email" type="email">
                             <label for="email">Ваша почта</label>
                         </div>
                         <div class="contacts__textarea">
                             <textarea name="text" id="text"></textarea>
                             <label for="text">Ваше сообщение</label>
                         </div>
-                        <div><button class="title title_fs14 btn contacts__btn">Отправить сообщение</button></div>
+                        <div class="contacts__actions">
+                            <button class="title title_fs14 btn contacts__btn">Отправить сообщение</button>
+                            <div class="descr descr_fs12 contacts__policy">
+                                <input required type="checkbox">
+                                <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <script src="js/script.js"></script>
 </body>
 </html>

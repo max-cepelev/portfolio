@@ -1,7 +1,7 @@
 .humburger {
     position: absolute;
-    top: 4%;
-    right: 2%;
+    top: 20px;
+    right: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -79,7 +79,7 @@
         }
         &:hover {
             &:before {
-                background-color: #000;
+                background-color: rgb(255, 255, 255);
             }
         }
     }
