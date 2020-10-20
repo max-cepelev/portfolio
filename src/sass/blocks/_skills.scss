@@ -4,7 +4,6 @@
         margin-top: 60px;
         display: grid;
         grid-template: repeat(2, 270px) / repeat(4, 270px);
-        grid-auto-columns: 270px;
         grid-auto-rows: 270px;
         gap: 13px;
         justify-content: center;
@@ -26,7 +25,6 @@
         margin-top: 120px;
         display: grid;
         grid-template: repeat(2, 62px) / repeat(3, 350px);
-        grid-auto-columns: 350px;
         grid-auto-rows: 70px;
         column-gap: 45px;
         row-gap: 30px;

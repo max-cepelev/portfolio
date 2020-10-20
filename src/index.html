@@ -50,11 +50,9 @@
         <div class="sidepanel__divider"></div>
         <div class="sidepanel__text"><img src="icons/social/text.png" alt="text"></div>
     </aside>
-
     <div class="menu">
         <div class="menu__block">
             <div class="menu__close"><img src="icons/menu/close.svg" alt="close"></div>
-
             <nav>
                 <ul class="menu__list">
                     <li class="menu__link"><a href="#">ПРО МЕНЯ</a></li>
@@ -65,17 +63,14 @@
                     <li class="menu__link"><a href="#">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
-
             <div class="menu__social">
                 <a href="#"><img src="icons/menu/github.svg" alt="github"></a>
                 <a href="#"><img src="icons/menu/instagram.svg" alt="instagram"></a>
                 <a href="#"><img src="icons/menu/facebook.svg" alt="facebook"></a>
             </div>
-
         </div>
         <div class="menu__overlay"></div>
     </div>
-
     <section class="promo">
         <div class="humburger">
             <span></span>
@@ -94,7 +89,14 @@
     <section class="about">
         <div class="container">
             <div class="about_grid">
-                <div class="about__photo"><img src="img/main_photo.jpg" alt="photo"></div>
+                <div class="about__photo">
+                    <!-- <img src="img/main_photo.jpg" alt="photo"> -->
+                    <picture>
+                        <source media="(max-width: 576px)" srcset="img/main_photo.jpg">
+                        <source media="(min-width: 577px)" srcset="img/main_photo.jpg">
+                        <img src="img/main_photo.jpg" alt="photo">
+                    </picture>
+                </div>
                 <div class="about__me">
                     <h2 class="title title_fs16 about__title">Про меня</h2>
                     <div class="title title_fs36">Меня зовут Максим</div>
@@ -129,12 +131,11 @@
             </div>
         </div>
     </section>
-    <!-- <section class="exp">
+    <section class="exp">
         <div class="container">
             <h2 class="title title_fs16 title_fs16-center">Опыт</h2>
             <div class="title title_fs36 title_fs36-center">Чем я буду полезен</div>
             <div class="divider"></div>
-
             <div class="exp__wrapper">
                 <div class="exp__column">
                     <h3 class="title title_fs20 exp__column-title">Образование</h3>
@@ -331,7 +332,7 @@
             <div class="contacts__grid">
                 <div class="contacts__photo"><img src="img/main_photo.jpg" alt="photo"></div>
                 <div class="contacts__descr">
-                    <h2 class="title title_fs16 about__title">Контакты</h2>
+                    <h2 class="title title_fs16">Контакты</h2>
                     <div class="title title_fs36">Свяжитесь со мной</div>
                     <div class="divider"></div>
                     <h3 class="title title_fs14">Любым удобным для вас способом:</h3>
@@ -365,7 +366,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>
