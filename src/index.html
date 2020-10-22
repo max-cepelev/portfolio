@@ -81,12 +81,12 @@
             <div class="title title_fs16 promo__subtitle">Меня зовут Максим</div>
             <h1 class="title title_fs48 promo__title">Я web-разработчик<br>из города Санкт-Петербург</h1>
             <div class="promo__btns">
-                <a href="#" class="promo__link btn">Портфолио</a>
-                <a href="#" class="promo__link">Про меня</a>
+                <a href="#portfolio" class="promo__link btn">Портфолио</a>
+                <a href="#about" class="promo__link">Про меня</a>
             </div>
         </div>
     </section>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about_grid">
                 <div class="about__photo">
@@ -274,7 +274,7 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <h2 class="title title_fs16 title_fs16-center">Портфолио</h2>
             <div class="title title_fs36 title_fs36-center">Мои работы</div>
@@ -342,7 +342,7 @@
                         <a href="" class="contacts__link"><img src="icons/social/instagram.svg" alt="instagram"></a>
                     </div>
                     <h3 class="title title_fs14">Или оставьте ваши данные и я сам вам напишу:</h3>
-                    <form action="#" class="descr descr_fs12 contacts__form">
+                    <form action="#" class="descr descr_fs12 contacts__form" enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'mailer/send.php')">
                         <div class="contacts__input">
                             <input required name="name" id="name" type="text">
                             <label for="name">Ваше имя</label>
@@ -367,6 +367,8 @@
             </div>
         </div>
     </section>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="js/jquery.validate.min.js"></script> -->
     <script src="js/script.js"></script>
 </body>
 </html>
