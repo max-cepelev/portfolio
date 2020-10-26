@@ -1,5 +1,6 @@
 const gulp        = require('gulp');
 const browserSync = require('browser-sync');
+const devip       = require('dev-ip');
 const sass        = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
@@ -12,7 +13,9 @@ gulp.task('server', function() {
     browserSync({
         server: {
             baseDir: "dist"
-        }
+        },
+        notify: false,
+        host: devip()
     });
 
     gulp.watch("src/*.html").on('change', browserSync.reload);
