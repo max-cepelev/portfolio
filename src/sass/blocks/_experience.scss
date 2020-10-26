@@ -29,11 +29,16 @@
                 &:after {
                     content: '';
                     width: 1px;
-                    height: calc(100% + 8px);
                     position: absolute;
                     top: -8px;
                     left: 0;
                     background-color: #000;
+                }
+                &.active {
+                    &:after {
+                        animation: line_vertical 3s ease 1s 1;
+                        animation-fill-mode: forwards;
+                    }
                 }
             }
         }
@@ -44,17 +49,33 @@
             content: '';
             position: absolute;
             height: 1px;
-            width: 43px;
+            width: 0px;
             top: 62px;
             background-color: #000;
+        }
+        &.active {
+            &:before {
+                animation: line_horizontal 1s linear 1.6s 1;
+                animation-fill-mode: forwards;
+            }
         }
         &-head {
             position: relative;
             padding: 45px 0 0 100px;
+            opacity: 0;
+            &.active {
+                animation: fadeInRight 1.3s linear 1.3s 1;
+                animation-fill-mode: forwards;
+            }
         }
         &-descr {
             padding-left: 43px;
             margin-top: 12px;
+            opacity: 0;
+            &.active {
+                animation: fadeIn 1s linear 3s 1;
+                animation-fill-mode: forwards;
+            }
         }
         &-icon {
             @include before_circle;
@@ -62,8 +83,15 @@
             top: 53px;
             left: 43px;
             img {
+                opacity: 0;
                 margin-top: 5px;
                 margin-left: 17px;
+            }
+            &.active {
+                img {
+                    animation: fadeIn 1s linear 2s 1;
+                    animation-fill-mode: forwards;
+                }
             }
         }
     }
