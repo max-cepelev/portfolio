@@ -11,9 +11,10 @@
     top: 230px;
     &__link {
         transition: 0.4s all;
+        transform: rotate(-90deg);
         &:hover {
             transition: 0.4s all;
-            transform: rotate(90deg);
+            transform: rotate(0deg);
         }
     }
     &__divider {

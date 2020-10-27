@@ -62,57 +62,38 @@ function throttleScroll(e) {
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
 var listItems = document.querySelectorAll(".exp__column ul li");
-// var firstBox = document.querySelector("#firstBox");
-var expItems = document.querySelectorAll(".exp__item");
-var expIcons = document.querySelectorAll(".exp__item-icon");
-var expHeads = document.querySelectorAll(".exp__item-head");
-var expDescrs = document.querySelectorAll(".exp__item-descr");
+var animationsFull = document.querySelectorAll(".animated_full");
+var animations = document.querySelectorAll(".animated");
 
 function scrolling(e) {
 
-    // if (isPartiallyVisible(firstBox)) {
-    //     firstBox.classList.add("active");
+    for (var i = 0; i < animations.length; i++) {
+        var animate = animations[i];
 
-    //     document.body.classList.add("colorOne");
-    //     document.body.classList.remove("colorTwo");
-    // } else {
-    //     document.body.classList.remove("colorOne");
-    //     document.body.classList.remove("colorTwo");
-    // }
-
-    // if (isFullyVisible(secondBox)) {
-    //     secondBox.classList.add("active");
-
-    //     document.body.classList.add("colorTwo");
-    //     document.body.classList.remove("colorOne");
-    // }
-    for (var i = 0; i < expItems.length; i++) {
-        var expItem = expItems[i];
-        var expIcon = expIcons[i];
-        var expHead = expHeads[i];
-        var expDescr = expDescrs[i];
-
-        if (isFullyVisible(expItem)) {
-        expItem.classList.add("active");
-        expIcon.classList.add("active");
-        expHead.classList.add("active");
-        expDescr.classList.add("active");
+        if (isPartiallyVisible(animate)) {
+            animate.classList.add("active");
+        } else {
+            // animate.classList.remove("active");
         }
-        // } else {
-        // expItem.classList.remove("active");
-        // expIcon.classList.remove("active");
-        // expHead.classList.remove("active");
-        // expDescr.classList.remove("active");
-        // }
     }
 
     for (var n = 0; n < listItems.length; n++) {
         var listItem = listItems[n];
 
-        if (isFullyVisible(listItem)) {
-        listItem.classList.add("active");
+        if (isPartiallyVisible(listItem)) {
+            listItem.classList.add("active");
         } else {
         // listItem.classList.remove("active");
+        }
+    }
+
+    for (var m = 0; m < animationsFull.length; m++) {
+        var animateFull = animationsFull[m];
+
+        if (isFullyVisible(animateFull)) {
+            animateFull.classList.add("active");
+        } else {
+            animateFull.classList.remove("active");
         }
     }
 }

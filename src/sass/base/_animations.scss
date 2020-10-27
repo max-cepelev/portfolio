@@ -14,6 +14,13 @@
         width: 43px;
     }
 }
+@keyframes lineSkills {
+    from {
+        width: 0;
+    }
+    to {
+    }
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -42,6 +49,61 @@
         transform: translate3d(0, 0, 0);
     }
 }
-.fadeInRight {
-    animation-name: fadeInRight;
+.active {
+    &.fadeInRight {
+        animation-name: fadeInRight;
+        animation-duration: 1.3s;
+        animation-fill-mode: forwards;
+    }
+    &.fadeInUp {
+        animation-name: fadeInUp;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    &.fadeIn {
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+    &.lineSkills {
+        animation-name: lineSkills;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+    }
+    &.line_horizontal {
+        &:before {
+            animation-name: line_horizontal;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+// delay time
+.active {
+    &.s0-7 {
+        animation-delay: 0.7s;
+        &:before {
+            animation-delay: 0.7s;
+        }
+    }
+    &.s2 {
+        animation-delay: 2s;
+    }
+    &.s3 {
+        animation-delay: 3s;
+    }
+    &.s2-7 {
+        animation-delay: 2.7s;
+        &:before {
+            animation-delay: 2.7s;
+        }
+    }
+    &.s4 {
+        animation-delay: 4s;
+    }
+    &.s5 {
+        animation-delay: 5s;
+    }
 }
