@@ -61,14 +61,14 @@ function throttleScroll(e) {
 
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
-var listItems = document.querySelectorAll(".exp__column ul li");
-var animationsFull = document.querySelectorAll(".animated_full");
-var animations = document.querySelectorAll(".animated");
+const listItems = document.querySelectorAll(".exp__column ul li");
+const animationsFull = document.querySelectorAll(".animated_full");
+const animations = document.querySelectorAll(".animated");
 
 function scrolling(e) {
 
     for (var i = 0; i < animations.length; i++) {
-        var animate = animations[i];
+        const animate = animations[i];
 
         if (isPartiallyVisible(animate)) {
             animate.classList.add("active");
@@ -78,7 +78,7 @@ function scrolling(e) {
     }
 
     for (var n = 0; n < listItems.length; n++) {
-        var listItem = listItems[n];
+        const listItem = listItems[n];
 
         if (isPartiallyVisible(listItem)) {
             listItem.classList.add("active");
@@ -88,7 +88,7 @@ function scrolling(e) {
     }
 
     for (var m = 0; m < animationsFull.length; m++) {
-        var animateFull = animationsFull[m];
+        const animateFull = animationsFull[m];
 
         if (isFullyVisible(animateFull)) {
             animateFull.classList.add("active");
@@ -99,20 +99,20 @@ function scrolling(e) {
 }
 
 function isPartiallyVisible(el) {
-    var elementBoundary = el.getBoundingClientRect();
+    const elementBoundary = el.getBoundingClientRect();
 
-    var top = elementBoundary.top;
-    var bottom = elementBoundary.bottom;
-    var height = elementBoundary.height;
+    const top = elementBoundary.top;
+    const bottom = elementBoundary.bottom;
+    const height = elementBoundary.height;
 
     return ((top + height >= 0) && (height + window.innerHeight >= bottom));
 }
 
 function isFullyVisible(el) {
-    var elementBoundary = el.getBoundingClientRect();
+    const elementBoundary = el.getBoundingClientRect();
 
-    var top = elementBoundary.top;
-    var bottom = elementBoundary.bottom;
+    const top = elementBoundary.top;
+    const bottom = elementBoundary.bottom;
 
     return ((top >= 0) && (bottom <= window.innerHeight));
 }

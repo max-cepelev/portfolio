@@ -37,17 +37,17 @@
                 &.active {
                     &:first-child {
                         &:after {
-                            animation: line_vertical 2s linear 1 forwards;
+                            animation: line_vertical 2s ease-out 1 forwards;
                         }
                     }
                     &:nth-child(2) {
                         &:after {
-                            animation: line_vertical 2s linear 1.9s 1 forwards;
+                            animation: line_vertical 2s ease-out 1.9s 1 forwards;
                         }
                     }
                     &:nth-child(3) {
                         &:after {
-                            animation: line_vertical 2s linear 4.9s 1 forwards;
+                            animation: line_vertical 2s ease-out 4.9s 1 forwards;
                         }
                     }
                 }

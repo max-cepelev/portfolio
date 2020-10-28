@@ -44,6 +44,9 @@
         &__items {
             grid-template-columns: repeat(auto-fit, 280px);
             gap: 40px;
+            &:hover {
+                background-color: #ffffff;
+            }
             .vertical, .horizontal {
                 grid-row: unset;
                 grid-column: unset;
@@ -176,6 +179,9 @@
     }
     .prices {
         padding-top: 40px;
+        .title_fs16-center {
+            margin-bottom: 25px;
+        }
         &__items {
             margin-top: 20px;
             padding: 0;
@@ -187,7 +193,8 @@
 
 @media (max-width: 576px) {
     .title_fs36 {
-        font-size: 24px;
+        margin-top: 10px;
+        font-size: 23px;
         line-height: 36px;
     }
     .divider {

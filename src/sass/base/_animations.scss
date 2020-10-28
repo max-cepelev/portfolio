@@ -69,13 +69,14 @@
         animation-name: lineSkills;
         animation-duration: 2s;
         animation-fill-mode: forwards;
-        animation-timing-function: ease;
+        animation-timing-function: ease-out;
     }
     &.line_horizontal {
         &:before {
             animation-name: line_horizontal;
             animation-duration: 1s;
             animation-fill-mode: forwards;
+            animation-timing-function: linear;
         }
     }
 }
