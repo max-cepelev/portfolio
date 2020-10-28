@@ -45,7 +45,7 @@ function send(event, php){
 }
 
 // scroll анимация
-var isScrolling = false;
+let isScrolling = false;
 
 window.addEventListener("scroll", throttleScroll, false);
 
@@ -67,7 +67,7 @@ const animations = document.querySelectorAll(".animated");
 
 function scrolling(e) {
 
-    for (var i = 0; i < animations.length; i++) {
+    for (let i = 0; i < animations.length; i++) {
         const animate = animations[i];
 
         if (isPartiallyVisible(animate)) {
@@ -77,7 +77,7 @@ function scrolling(e) {
         }
     }
 
-    for (var n = 0; n < listItems.length; n++) {
+    for (let n = 0; n < listItems.length; n++) {
         const listItem = listItems[n];
 
         if (isPartiallyVisible(listItem)) {
@@ -87,7 +87,7 @@ function scrolling(e) {
         }
     }
 
-    for (var m = 0; m < animationsFull.length; m++) {
+    for (let m = 0; m < animationsFull.length; m++) {
         const animateFull = animationsFull[m];
 
         if (isFullyVisible(animateFull)) {
