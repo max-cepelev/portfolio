@@ -11,6 +11,7 @@
         
     }
     &__item {
+        opacity: 0;
         display: grid;
         grid-template: repeat (2, minmax(21px, auto)) / repeat(2, auto);
         position: relative;

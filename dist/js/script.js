@@ -1,6 +1,11 @@
 const humburger = document.querySelector('.humburger'),
         menu = document.querySelector('.menu'),
-        closeElem = document.querySelector('.menu__close');
+        closeElem = document.querySelector('.menu__close'),
+        modalWindow = document.querySelector('#thanks'),
+        modalSuccess = document.querySelector('#success'),
+        modalError = document.querySelector('#error'),
+        modalWindowBtnOk = document.querySelector('#success button'),
+        modalWindowBtnNo = document.querySelector('#error button');
 
 humburger.addEventListener('click', () => {
     menu.classList.add('active');
@@ -9,6 +14,20 @@ humburger.addEventListener('click', () => {
 closeElem.addEventListener('click', () =>{ 
     menu.classList.remove('active');
 });
+
+modalWindowBtnOk.addEventListener('click', () =>{ 
+    modalWindow.style.display = "none";
+});
+
+modalWindowBtnNo.addEventListener('click', () =>{ 
+    modalWindow.style.display = "none";
+});
+
+window.onclick = function(event) {
+    if (event.target == modalWindow) {
+        modalWindow.style.display = "none";
+    }
+};
 
 const counters = document.querySelectorAll('.skills__levels-percent'),
         lines = document.querySelectorAll('.skills__levels-line span');
@@ -31,10 +50,14 @@ function send(event, php){
             // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
             if (json.result == "success") {
                 // Если сообщение отправлено
-                alert("Сообщение отправлено");
+                // alert("Сообщение отправлено");
+                modalWindow.style.display = "block";
+                modalSuccess.style.display = "flex";
             } else {
                 // Если произошла ошибка
-                alert("Ошибка. Сообщение не отправлено");
+                // alert("Ошибка. Сообщение не отправлено");
+                modalWindow.style.display = "block";
+                modalSuccess.style.display = "flex";
             }
         // Если не удалось связаться с php файлом
         } else {alert("Ошибка сервера. Номер: "+req.status);}}; 

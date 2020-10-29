@@ -29,6 +29,14 @@
         opacity: 1;
     }
 }
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -83,6 +91,12 @@
 
 // delay time
 .active {
+    &.s0-3 {
+        animation-delay: .3s;
+    }
+    &.s0-5 {
+        animation-delay: .5s;
+    }
     &.s0-7 {
         animation-delay: 0.7s;
         &:before {
