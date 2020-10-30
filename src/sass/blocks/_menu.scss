@@ -13,7 +13,7 @@
         display: block;
         width: 30px;
         height: 3px;
-        background: #151812;
+        background: var(--menu-color);
     }
     span.middle {
         width: 36px;
@@ -41,7 +41,7 @@
         // left: -100%;
         width: 345px;
         height: 100%;
-        background-color: $main-color;
+        background-color: var(--main-color, #F3D250);
         transition: 0.6s all;
         z-index: 10;
     }

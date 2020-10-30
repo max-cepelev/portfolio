@@ -1,6 +1,6 @@
 .about {
     padding-top: 120px;
-    background-color: #ECECEC;
+    background: var(--bg-color, #ECECEC) url(img/noise-pattern.png) repeat;
     &_grid {
         display: grid;
         grid-template-columns: 400px 670px;

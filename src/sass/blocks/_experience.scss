@@ -1,5 +1,6 @@
 .exp {
     padding-top: 120px;
+    background-color: var(--bg-color, #ECECEC);
     &__wrapper {
         padding: 60px 65px 0 65px;
         display: grid;
@@ -15,7 +16,7 @@
                 position: absolute;
                 width: 15px;
                 height: 15px;
-                background-color: $main-color;
+                background-color: var(--main-color, #F3D250);
                 border-radius: 100%;
                 left: -7px;
                 top: 50%;

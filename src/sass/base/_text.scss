@@ -1,6 +1,6 @@
 .title {
     font-weight: bold;
-    color: #000000;
+    color: var(--text-color, #000000);
     margin-bottom: 0;
     &_fs14 {
         font-size: 14px;
@@ -36,7 +36,7 @@
 }
 .descr {
     font-weight: 500;
-    color: #000;
+    color: var(--text-color, #000000);
     &_fs12 {
         font-size: 12px;
         line-height: 18px;
@@ -51,6 +51,6 @@
     width: 66px;
     height: 3px;
     margin: 25px auto 0 auto;
-    background-color: $main-color;
+    background-color: var(--main-color, #F3D250);
 }
 

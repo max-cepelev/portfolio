@@ -2,14 +2,16 @@
     min-height: 100vh;
     position: relative;
     // background: url('../img/main_bg.jpg') no-repeat 50%/cover;
-    background-color: #90CCF4;
+    background-color: var(--promo-color, #90CCF4);
     padding-top: 205px;
     &__title {
         width: 650px;
         margin-top: 10px;
+        color: var(--text-color-promo, #000000);
     }
     &__subtitle {
         padding-left: 12px;
+        color: var(--text-color-promo, #000000);
     }
     &__btns {
         margin-top: 25px;
@@ -19,7 +21,7 @@
         width: 250px;
     }
     &__link {
-        color: #000;
+        color: var(--text-color-promo, #000000);
         font-weight: bold;
         &:hover {
             color: #000;
@@ -45,7 +47,7 @@
 }
 
 .custom-shape-divider-bottom-1603994481 .shape-fill {
-    fill: #ECECEC;
+    fill: var(--bg-color, #ECECEC);
 }
 
 /** For tablet devices **/

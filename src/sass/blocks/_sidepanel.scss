@@ -20,7 +20,7 @@
     &__divider {
         width: 2px;
         height: 70px;
-        background-color:#000;
+        background-color: var(--menu-color, #000000);
     }
     &__text {
         img {

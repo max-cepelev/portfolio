@@ -16,7 +16,7 @@
     transform: translate(-50%, -50%);
     width: 380px;
     min-height: 180px;
-    background-color: #fff;
+    background-color: var(--bg-color, #ECECEC);
     padding: 25px 40px;
     text-align: center;
     display: none;

@@ -1,5 +1,6 @@
 .prices {
     padding-top: 66px;
+    background-color: var(--bg-color, #ECECEC);
     &__items {
         margin-top: 60px;
         padding: 0 60px;
@@ -22,7 +23,7 @@
             position: absolute;
             width: 15px;
             height: 15px;
-            background-color: $main-color;
+            background-color: var(--main-color, #F3D250);
             border-radius: 100%;
             top: 3px;
         }
