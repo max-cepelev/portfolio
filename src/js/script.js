@@ -1,11 +1,14 @@
 const humburger = document.querySelector('.humburger'),
         menu = document.querySelector('.menu'),
+        menuItem = document.querySelectorAll('.menu__link'),
+        menuOverlay = document.querySelector('.menu__overlay'),
         closeElem = document.querySelector('.menu__close'),
+        counters = document.querySelectorAll('.skills__levels-percent'),
+        lines = document.querySelectorAll('.skills__levels-line span'),
         modalWindow = document.querySelector('#thanks'),
         modalSuccess = document.querySelector('#success'),
         modalError = document.querySelector('#error'),
-        modalWindowBtnOk = document.querySelector('#success button'),
-        modalWindowBtnNo = document.querySelector('#error button');
+        modalWindowBtn = document.querySelectorAll('#thanks button');
 
 humburger.addEventListener('click', () => {
     menu.classList.add('active');
@@ -14,29 +17,32 @@ humburger.addEventListener('click', () => {
 closeElem.addEventListener('click', () =>{ 
     menu.classList.remove('active');
 });
-modalWindowBtnOk.addEventListener('click', () =>{ 
-    modalWindow.style.display = "none";
+
+menuItem.forEach( (item, i) => {
+    item.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
 });
 
-modalWindowBtnNo.addEventListener('click', () =>{ 
-    modalWindow.style.display = "none";
+counters.forEach( (item, i) => {
+    lines[i].style.width = item.innerHTML;
+});
+
+modalWindowBtn.forEach( (item, i) => {
+    item.addEventListener('click', () => {
+        modalWindow.style.display = "none";
+    });
 });
 
 window.onclick = function(event) {
     if (event.target == modalWindow) {
         modalWindow.style.display = "none";
     }
-    if (event.target == closeElem) {
+    if (event.target == menuOverlay) {
         menu.classList.remove('active');
     }
 };
 
-const counters = document.querySelectorAll('.skills__levels-percent'),
-        lines = document.querySelectorAll('.skills__levels-line span');
-
-counters.forEach( (item, i) => {
-    lines[i].style.width = item.innerHTML;
-});
 
 // Отправка данных на сервер
 function send(event, php){
