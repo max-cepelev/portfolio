@@ -204,6 +204,16 @@
         width: 100%;
         padding: 0 10px;
     }
+    .up {
+        bottom: 4px;
+        &.active {
+            opacity: 0.3;
+            right: 4px;
+            &:hover {
+                opacity: 0.3;
+            }
+        }
+    }
     .promo {
         // background: url('../img/main_bg.jpg') no-repeat 58%/cover;
         &__title {

@@ -27,6 +27,7 @@
     }
     &__social {
         margin: 14px 0 14px 0;
+        overflow: hidden;
     }
     &__link {
         margin-right: 25px;
@@ -37,7 +38,6 @@
         }
     }
     &__form {
-        opacity: 0;
         position: relative;
         margin-top: 30px;
         display: grid;
@@ -87,6 +87,7 @@
         display: grid;
         grid-template-columns: repeat(2, auto);
         column-gap: 25px;
+        opacity: 0;
     }
     &__policy {
         align-self: center;

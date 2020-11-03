@@ -6,6 +6,7 @@
         display: grid;
         grid-template-columns: repeat(2, 425px);
         justify-content: space-between;
+        overflow: hidden;
     }
     &__column {
         &-title {

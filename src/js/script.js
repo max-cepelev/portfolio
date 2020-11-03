@@ -1,13 +1,14 @@
-const humburger = document.querySelector('.humburger'),
-        menu = document.querySelector('.menu'),
-        menuItem = document.querySelectorAll('.menu__link'),
-        menuOverlay = document.querySelector('.menu__overlay'),
-        closeElem = document.querySelector('.menu__close'),
-        counters = document.querySelectorAll('.skills__levels-percent'),
-        lines = document.querySelectorAll('.skills__levels-line span'),
-        modalWindow = document.querySelector('#thanks'),
-        modalSuccess = document.querySelector('#success'),
-        modalError = document.querySelector('#error'),
+const   humburger      = document.querySelector('.humburger'),
+        promo          = document.querySelector('.promo'),
+        menu           = document.querySelector('.menu'),
+        menuItem       = document.querySelectorAll('.menu__link'),
+        menuOverlay    = document.querySelector('.menu__overlay'),
+        closeElem      = document.querySelector('.menu__close'),
+        counters       = document.querySelectorAll('.skills__levels-percent'),
+        lines          = document.querySelectorAll('.skills__levels-line span'),
+        modalWindow    = document.querySelector('#thanks'),
+        modalSuccess   = document.querySelector('#success'),
+        modalError     = document.querySelector('#error'),
         modalWindowBtn = document.querySelectorAll('#thanks button');
 
 humburger.addEventListener('click', () => {
@@ -92,9 +93,12 @@ function throttleScroll(e) {
 
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
-const listItems = document.querySelectorAll(".exp__column ul li");
-const animationsFull = document.querySelectorAll(".animated_full");
-const animations = document.querySelectorAll(".animated");
+const   listItems      = document.querySelectorAll(".exp__column ul li"),
+        animationsFull = document.querySelectorAll(".animated_full"),
+        animations     = document.querySelectorAll(".animated"),
+        upBtn          = document.querySelector("#totop");
+
+
 
 function scrolling(e) {
 
@@ -124,9 +128,17 @@ function scrolling(e) {
         if (isFullyVisible(animateFull)) {
             animateFull.classList.add("active");
         } else {
-            animateFull.classList.remove("active");
+            // animateFull.classList.remove("active");
         }
     }
+
+    // кнопка наверх, скрывается когда секция промо частично видна
+    if (isPartiallyVisible(promo)) {
+        upBtn.classList.remove("active");
+    } else {
+        upBtn.classList.add("active");
+    }
+
 }
 
 function isPartiallyVisible(el) {

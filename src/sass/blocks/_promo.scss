@@ -29,6 +29,7 @@
         }
     }
 }
+
 .custom-shape-divider-bottom-1603994481 {
     position: absolute;
     bottom: 0;
@@ -37,17 +38,15 @@
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1603994481 svg {
-    position: relative;
-    display: block;
-    width: calc(120% + 1.3px);
-    height: 127px;
-}
-
-.custom-shape-divider-bottom-1603994481 .shape-fill {
-    fill: var(--bg-color, #ECECEC);
+    svg {
+        position: relative;
+        display: block;
+        width: calc(120% + 1.3px);
+        height: 127px;
+    }
+    .shape-fill {
+        fill: var(--bg-color, #ECECEC);
+    }
 }
 
 /** For tablet devices **/
