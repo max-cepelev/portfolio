@@ -11,11 +11,16 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    transition: 0.5s color;
+    transition: 0.7s background-color;
 }
 
 .container {
     width: 1140px;
     margin: 0 auto;
+}
+.icon-fill {
+    fill: var(--menu-color, #000000);
 }
 
 @import 'blocks/button';

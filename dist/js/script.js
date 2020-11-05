@@ -1,4 +1,8 @@
 const   humburger      = document.querySelector('.humburger'),
+        dayBtn         = document.querySelector('.day'),
+        nightBtn       = document.querySelector('.night'),
+        root           = document.querySelector(':root'),
+        rootStyles     = getComputedStyle(root),
         promo          = document.querySelector('.promo'),
         menu           = document.querySelector('.menu'),
         menuItem       = document.querySelectorAll('.menu__link'),
@@ -10,6 +14,26 @@ const   humburger      = document.querySelector('.humburger'),
         modalSuccess   = document.querySelector('#success'),
         modalError     = document.querySelector('#error'),
         modalWindowBtn = document.querySelectorAll('#thanks button');
+
+dayBtn.addEventListener('click', () => {
+    nightBtn.classList.add('active');
+    dayBtn.classList.remove('active');
+    root.style.setProperty('--main-color', '#F3D250');
+    root.style.setProperty('--bg-color', '#ECECEC');
+    root.style.setProperty('--promo-color', '#90CCF4');
+    root.style.setProperty('--menu-color', '#000000');
+    root.style.setProperty('--text-color-promo', '#000000');
+});
+
+nightBtn.addEventListener('click', () => {
+    nightBtn.classList.remove('active');
+    dayBtn.classList.add('active');
+    root.style.setProperty('--main-color', '#FFE400');
+    root.style.setProperty('--bg-color', '#747474');
+    root.style.setProperty('--promo-color', '#272727');
+    root.style.setProperty('--menu-color', '#FFE400');
+    root.style.setProperty('--text-color-promo', '#747474');
+});
 
 humburger.addEventListener('click', () => {
     menu.classList.add('active');

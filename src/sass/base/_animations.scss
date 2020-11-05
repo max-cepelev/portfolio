@@ -51,6 +51,7 @@
 }
 .active {
     &.fadeInRight {
+        opacity: 0;
         animation-name: fadeInRight;
         animation-duration: 1.3s;
         animation-fill-mode: forwards;
