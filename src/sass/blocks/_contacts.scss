@@ -31,6 +31,9 @@
     }
     &__link {
         margin-right: 25px;
+        svg {
+            opacity: 0;
+        }
     }
     &__form {
         position: relative;
@@ -91,6 +94,12 @@
         align-items: center;
         input {
             margin-right: 12px;
+        }
+        span {
+            a {
+                text-decoration: none;
+                color: var(--main-color);
+            }
         }
     }
 }

@@ -49,6 +49,32 @@
         transform: translate3d(0, 0, 0);
     }
 }
+@keyframes themesIn{
+    from {
+        left: -30px;
+        top: 20px;
+    }
+    50% {
+        top: -5px;
+    }
+    to {
+        left: 3%;
+        top: 20px;
+    }
+}
+@keyframes themesOut{
+    from {
+        left: 3%;
+        top: 20px;
+    }
+    50% {
+        top: 45px;
+    }
+    to {
+        left: -30px;
+        top: 20px;
+    }
+}
 .active {
     &.fadeInRight {
         opacity: 0;
