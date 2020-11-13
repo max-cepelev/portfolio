@@ -28,6 +28,16 @@
             text-decoration: none;
         }
     }
+    &__img {
+        position: absolute;
+        bottom: 0%;
+        right: 13%;
+        width: 300px;
+        img {
+            width: 100%;
+            transform: rotate(-7deg);
+        }
+    }
 }
 
 .custom-shape-divider-bottom-1603994481 {

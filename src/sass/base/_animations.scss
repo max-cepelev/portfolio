@@ -84,8 +84,9 @@
     }
     &.fadeInUp {
         animation-name: fadeInUp;
-        animation-duration: 1s;
+        animation-duration: .5s;
         animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
     }
     &.fadeIn {
         animation-name: fadeIn;
