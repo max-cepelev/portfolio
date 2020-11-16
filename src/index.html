@@ -81,14 +81,11 @@
             <span></span>
         </div>
         <div class="container">
-            <div class="title title_fs16 promo__subtitle">Меня зовут Максим</div>
+            <div class="title title_fs16 promo__subtitle animated fadeInCircle">Меня зовут Максим</div>
             <h1 class="title title_fs48 promo__title">Я web-разработчик<br>из города Санкт-Петербург</h1>
             <div class="promo__btns">
                 <a href="#portfolio" class="promo__link btn">Портфолио</a>
                 <a href="#about" class="promo__link">Про меня</a>
-            </div>
-            <div class="promo__img">
-                <img src="img/happy-man-boat.svg" alt="boat">
             </div>
         </div>
         <div class="custom-shape-divider-bottom-1603994481">
@@ -345,7 +342,7 @@
             <div class="contacts__grid">
                 <div class="contacts__photo animated fadeIn"><img src="img/main_photo.jpg" alt="photo"></div>
                 <div class="contacts__descr">
-                    <h2 class="title title_fs16 animated fadeInUp">Контакты</h2>
+                    <h2 class="contacts__title title title_fs16 animated fadeInUp">Контакты</h2>
                     <div class="title title_fs36 animated fadeInUp">Свяжитесь со мной</div>
                     <div class="divider"></div>
                     <h3 class="title title_fs14 animated fadeInUp">Любым удобным для вас способом:</h3>
@@ -368,12 +365,19 @@
                             <textarea name="text" id="text"></textarea>
                             <label for="text">Ваше сообщение</label>
                         </div>
+                        <div class="contacts__file">
+                            <label for="myfile" class="labelFile">
+                                <img src="https://img.icons8.com/ios/50/000000/upload-to-cloud.png"/>
+                                <p class="count">Прикрепить файлы</p>
+                            </label>
+                            <input type="file" multiple class="inputFile" id="myfile" name="file[]" multiple="multiple" onchange="inputFile(event)"/>
+                        </div>
                         <div class="contacts__actions animated fadeIn s0-5">
                             <button class="title title_fs14 btn contacts__btn">Отправить сообщение</button>
-                            <div class="descr descr_fs12 contacts__policy">
-                                <input required type="checkbox">
-                                <span>Я согласен(а) с <a href="policy.html">политикой конфиденциальности</a></span>
-                            </div>
+                        </div>
+                        <div class="descr descr_fs12 contacts__policy">
+                            <input required type="checkbox">
+                            <span>Я согласен(а) с <a href="policy.html">политикой конфиденциальности</a></span>
                         </div>
                     </form>
                 </div>

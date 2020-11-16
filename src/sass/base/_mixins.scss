@@ -4,10 +4,10 @@
     &:before {
         content: '';
         position: absolute;
+        top: -28%;
+        left: 0;
         width: 36px;
         height: 36px;
-        top: -26%;
-        left: 0;
         border-radius: 100%;
         background: var(--main-color, #F3D250);
         z-index: -1;

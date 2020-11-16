@@ -10,7 +10,7 @@
         justify-content: center;
     }
     &__item {
-        padding: 30px;
+        padding: 20px 10px 10px 30px;
         border: 1px solid #000000;
         transition: 0.5s all;
         opacity: 0;
@@ -23,6 +23,7 @@
     }
     &__img {
         height: 65px;
+        display: flex;
     }
     &__levels {
         margin-top: 120px;
