@@ -69,6 +69,10 @@
     .container {
         max-width: 720px;
     }
+    .promo__title {
+        width: 100%;
+        font-size: 44px;
+    }
     .about {
         &_grid {
             grid-template-columns: 300px 380px;
@@ -96,9 +100,6 @@
             margin-top: 45px;
             grid-template: repeat(3, 243px) / repeat(3, 243px);
             gap: 10px;
-        }
-        &__item {
-            padding: 15px;
         }
         &__levels {
             padding: 0 15px;
@@ -129,7 +130,6 @@
         max-width: 540px;
     }
     .promo__title {
-        width: 380px;
         font-size: 28px;
         line-height: 38px;
     }
@@ -159,12 +159,9 @@
     .skills {
         padding-top: 45px;
         &__items {
-            margin-top: 45px;
+            margin-top: 30px;
             grid-template: repeat(4, 270px) / repeat(2, 270px);
             gap: 10px;
-        }
-        &__item {
-            padding: 30px;
         }
         &__levels {
             grid-template-columns: 1fr;
@@ -217,7 +214,6 @@
     .promo {
         // background: url('../img/main_bg.jpg') no-repeat 58%/cover;
         &__title {
-            width: 300px;
             font-size: 22px;
         }
         &__btns {
@@ -269,23 +265,36 @@
             margin: 15px auto 20px 0;
         }
         &__form {
-            grid-template: 45px 45px 143px 100px / 1fr;
+            grid-template: 45px 45px 143px 20px 45px/ 50px 1fr;
+            column-gap: 10px;
         }
-        &__textarea {
-            grid-column: unset;
-        }    
-        &__actions {
-            grid-column: unset;
-            grid-template-columns: 1fr;
-            align-content: space-between;
+        &__input {
+            grid-column: 1/3;
+        }  
+        &__file {
+            order: 1;
+            p {
+                display: none;
+            }
+            label {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
-        &__btn {
-            width: 220px;
-            margin: 0 auto;
+        &__img {
+            display: block;
+        }
+        &__action {
             order: 2;
         }
         &__policy {
-            order: 1;
+            input {
+                margin-right: 8px;
+            }
+            span {
+                font-size: 10px;
+            }
         }
     }
     .modal {

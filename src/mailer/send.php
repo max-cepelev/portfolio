@@ -31,7 +31,7 @@ try {
     // Настройки вашей почты
     $mail->Host       = 'smtp.mail.ru'; // SMTP сервера вашей почты
     $mail->Username   = 'dules@inbox.ru'; // Логин на почте
-    $mail->Password   = ''; // Пароль на почте
+    $mail->Password   = 'frai2912'; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
     $mail->setFrom('dules@inbox.ru', 'Сообщение с сайта-портфолио'); // Адрес самой почты и имя отправителя

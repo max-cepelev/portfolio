@@ -95,6 +95,16 @@ function send(event, php){
     req.send(new FormData(event.target));
 }
 
+// Оформление input file
+function inputFile(e) {
+    el = e.target.parentNode.querySelector('.count');
+    if (e.target.value != '') {
+        el.innerHTML = "Выбрано файлов: " + e.target.files.length;
+    } else {
+        el.innerHTML = 'Прикрепить файлы';
+    }
+}
+
 // scroll анимация
 let isScrolling = false;
 
