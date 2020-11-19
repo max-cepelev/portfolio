@@ -70,8 +70,7 @@
         max-width: 720px;
     }
     .promo__title {
-        width: 100%;
-        font-size: 44px;
+        font-size: calc(3vw + 9px);
     }
     .about {
         &_grid {
@@ -130,7 +129,7 @@
         max-width: 540px;
     }
     .promo__title {
-        font-size: 28px;
+        // font-size: 28px;
         line-height: 38px;
     }
     .about {
@@ -214,7 +213,7 @@
     .promo {
         // background: url('../img/main_bg.jpg') no-repeat 58%/cover;
         &__title {
-            font-size: 22px;
+            // font-size: 22px;
         }
         &__btns {
             margin-top: 30px;
@@ -265,28 +264,14 @@
             margin: 15px auto 20px 0;
         }
         &__form {
-            grid-template: 45px 45px 143px 20px 45px/ 50px 1fr;
-            column-gap: 10px;
+            grid-template: 45px 45px 143px 20px 45px/ 1fr;
+            column-gap: 0;
         }
         &__input {
-            grid-column: 1/3;
+            grid-column: 1/2;
         }  
         &__file {
-            order: 1;
-            p {
-                display: none;
-            }
-            label {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-        &__img {
-            display: block;
-        }
-        &__action {
-            order: 2;
+            display: none;
         }
         &__policy {
             input {

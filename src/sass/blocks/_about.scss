@@ -4,7 +4,7 @@
     &_grid {
         display: grid;
         grid-template-columns: 400px 670px;
-        grid-template-rows: minmax(245px, auto) minmax(255px, auto);
+        grid-template-rows: minmax(190px, auto) minmax(255px, auto);
         grid-auto-rows: minmax(245px, auto);
         column-gap: 70px;
         row-gap: 40px;
@@ -23,7 +23,6 @@
     &__me {
         margin-top: 6px;
         .descr {
-            opacity: 0;
             margin-top: 15px;
         }
         .divider {
