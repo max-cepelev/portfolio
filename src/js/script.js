@@ -1,18 +1,18 @@
-const   humburger      = document.querySelector('.humburger'),
-        dayBtn         = document.querySelector('.day'),
-        nightBtn       = document.querySelector('.night'),
-        html           = document.querySelector('html'),
-        promo          = document.querySelector('.promo'),
-        menu           = document.querySelector('.menu'),
-        menuItem       = document.querySelectorAll('.menu__link'),
-        menuOverlay    = document.querySelector('.menu__overlay'),
-        closeElem      = document.querySelector('.menu__close'),
-        counters       = document.querySelectorAll('.skills__levels-percent'),
-        lines          = document.querySelectorAll('.skills__levels-line span'),
-        modalWindow    = document.querySelector('#thanks'),
-        modalSuccess   = document.querySelector('#success'),
-        modalError     = document.querySelector('#error'),
-        modalWindowBtn = document.querySelectorAll('#thanks button');
+const   html           = document.querySelector('html'),
+        promo          = html.querySelector('.promo'),
+        humburger      = promo.querySelector('.humburger'),
+        dayBtn         = promo.querySelector('.day'),
+        nightBtn       = promo.querySelector('.night'),
+        menu           = html.querySelector('.menu'),
+        menuItem       = menu.querySelectorAll('.menu__link'),
+        menuOverlay    = menu.querySelector('.menu__overlay'),
+        closeElem      = menu.querySelector('.menu__close'),
+        counters       = html.querySelectorAll('.skills__levels-percent'),
+        lines          = html.querySelectorAll('.skills__levels-line span'),
+        modalWindow    = html.querySelector('#thanks'),
+        modalSuccess   = modalWindow.querySelector('#success'),
+        modalError     = modalWindow.querySelector('#error'),
+        modalWindowBtn = modalWindow.querySelectorAll('#thanks button');
 
 nightBtn.addEventListener('click', () => {
     dayBtn.classList.add('active');
@@ -65,7 +65,7 @@ window.onclick = function(event) {
 
 
 // Отправка данных на сервер
-function send(event, php){
+function send(event, php) {
     console.log("Отправка запроса");
     event.preventDefault ? event.preventDefault() : event.returnValue = false;
     const req = new XMLHttpRequest();
@@ -97,7 +97,7 @@ function send(event, php){
 
 // Оформление input file
 function inputFile(e) {
-    el = e.target.parentNode.querySelector('.count');
+    let el = e.target.parentNode.querySelector('.count');
     if (e.target.value != '') {
         el.innerHTML = "Выбрано файлов: " + e.target.files.length;
     } else {
@@ -122,10 +122,10 @@ function throttleScroll(e) {
 
 document.addEventListener("DOMContentLoaded", scrolling, false);
 
-const   listItems      = document.querySelectorAll(".exp__column ul li"),
-        animationsFull = document.querySelectorAll(".animated_full"),
-        animations     = document.querySelectorAll(".animated"),
-        upBtn          = document.querySelector("#totop");
+const   listItems      = html.querySelectorAll(".exp__column ul li"),
+        animationsFull = html.querySelectorAll(".animated_full"),
+        animations     = html.querySelectorAll(".animated"),
+        upBtn          = html.querySelector("#totop");
 
 
 

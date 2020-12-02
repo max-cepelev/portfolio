@@ -15,12 +15,12 @@
         border-right: 2px solid;
         border-right-color: transparent;
         &_up {
-            animation: typeWriter 2s steps(44) 4s 1 normal both,
-            blinkTextCursor 400ms steps(44) 4s 5 normal;
+            animation: typeWriter 3s steps(44) 4s 1 normal both,
+            blinkTextCursor 400ms steps(44) 4s 8 normal;
         }
         &_end {
-            animation: typeWriter 3s steps(44) 6s 1 normal both,
-            blinkTextCursor 400ms steps(44) 6s infinite normal;
+            animation: typeWriter 2s steps(44) 7s 1 normal both,
+            blinkTextCursor 400ms steps(44) 7s infinite normal;
         }
     }
     &__subtitle {

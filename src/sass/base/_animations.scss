@@ -113,10 +113,20 @@
 }
 @keyframes promoBtn {
     from {
+        z-index: 0;
         transform: translateX(-150px);
     }
     to {
+        z-index: 0;
         transform: translateX(0);
+    }
+}
+@keyframes promoBtnMain {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: none;
     }
 }
 .active {
@@ -152,6 +162,15 @@
         animation-fill-mode: forwards;
         animation-timing-function: ease;
         z-index: -1;
+    }
+    &.promoBtnMain {
+        transform: rotateX(90deg);
+        transform-style: preserve-3d;
+        animation-name: promoBtnMain;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+        z-index: 1;
     }
 
     &.lineSkills {
@@ -211,8 +230,8 @@
     &.s5 {
         animation-delay: 5s;
     }
-    &.s11 {
-        animation-delay: 11s;
+    &.s9-5 {
+        animation-delay: 9.5s;
     }
     &.s10 {
         animation-delay: 10s;
