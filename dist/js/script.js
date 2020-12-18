@@ -1,11 +1,12 @@
 const   html           = document.querySelector('html'),
         promo          = html.querySelector('.promo'),
         humburger      = promo.querySelector('.humburger'),
-        dayBtn         = promo.querySelector('.day'),
-        nightBtn       = promo.querySelector('.night'),
+        // dayBtn         = promo.querySelector('.day'),
+        // nightBtn       = promo.querySelector('.night'),
         menu           = html.querySelector('.menu'),
         menuItem       = menu.querySelectorAll('.menu__link'),
         menuOverlay    = menu.querySelector('.menu__overlay'),
+        munuNight      = menu.querySelector('.menu__night'),
         closeElem      = menu.querySelector('.menu__close'),
         counters       = html.querySelectorAll('.skills__levels-percent'),
         lines          = html.querySelectorAll('.skills__levels-line span'),
@@ -14,33 +15,44 @@ const   html           = document.querySelector('html'),
         modalError     = modalWindow.querySelector('#error'),
         modalWindowBtn = modalWindow.querySelectorAll('#thanks button');
 
-nightBtn.addEventListener('click', () => {
-    dayBtn.classList.add('active');
-    dayBtn.classList.remove('disactive');
-    nightBtn.classList.remove('active');
-    nightBtn.classList.add('disactive');
-    html.classList.remove('__night-theme');
-});
+// nightBtn.addEventListener('click', () => {
+//     dayBtn.classList.add('active');
+//     dayBtn.classList.remove('disactive');
+//     nightBtn.classList.remove('active');
+//     nightBtn.classList.add('disactive');
+//     html.classList.remove('__night-theme');
+// });
 
-dayBtn.addEventListener('click', () => {
-    nightBtn.classList.add('active');
-    nightBtn.classList.remove('disactive');
-    dayBtn.classList.remove('active');
-    dayBtn.classList.add('disactive');
-    html.classList.add('__night-theme');
+// dayBtn.addEventListener('click', () => {
+//     nightBtn.classList.add('active');
+//     nightBtn.classList.remove('disactive');
+//     dayBtn.classList.remove('active');
+//     dayBtn.classList.add('disactive');
+//     html.classList.add('__night-theme');
+// });
+
+function addClassActive(elem) {
+    elem.classList.add('active');
+}
+function removeClassActive(elem) {
+    elem.classList.remove('active');
+}
+
+munuNight.addEventListener('click', () => {
+    html.classList.toggle('__night-theme');
 });
 
 humburger.addEventListener('click', () => {
-    menu.classList.add('active');
+    addClassActive(menu);
 });
 
-closeElem.addEventListener('click', () =>{ 
-    menu.classList.remove('active');
+closeElem.addEventListener('click', () => {
+    removeClassActive(menu);
 });
 
-menuItem.forEach( (item, i) => {
+menuItem.forEach(item => {
     item.addEventListener('click', () => {
-        menu.classList.remove('active');
+        removeClassActive(menu);
     });
 });
 
@@ -59,7 +71,7 @@ window.onclick = function(event) {
         modalWindow.style.display = "none";
     }
     if (event.target == menuOverlay) {
-        menu.classList.remove('active');
+        removeClassActive(menu);
     }
 };
 
@@ -135,7 +147,7 @@ function scrolling(e) {
         const animate = animations[i];
 
         if (isPartiallyVisible(animate)) {
-            animate.classList.add("active");
+            addClassActive(animate);
         } else {
             // animate.classList.remove("active");
         }
@@ -145,7 +157,7 @@ function scrolling(e) {
         const listItem = listItems[n];
 
         if (isPartiallyVisible(listItem)) {
-            listItem.classList.add("active");
+            addClassActive(listItem);
         } else {
         // listItem.classList.remove("active");
         }
@@ -155,7 +167,7 @@ function scrolling(e) {
         const animateFull = animationsFull[m];
 
         if (isFullyVisible(animateFull)) {
-            animateFull.classList.add("active");
+            addClassActive(animateFull);
         } else {
             // animateFull.classList.remove("active");
         }
@@ -163,9 +175,9 @@ function scrolling(e) {
 
     // кнопка наверх, скрывается когда секция промо частично видна
     if (isPartiallyVisible(promo)) {
-        upBtn.classList.remove("active");
+        removeClassActive(upBtn);
     } else {
-        upBtn.classList.add("active");
+        addClassActive(upBtn);
     }
 
 }

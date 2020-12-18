@@ -1,6 +1,7 @@
 .about {
     padding-top: 120px;
     background-color: var(--bg-color, #ECECEC);
+    overflow: hidden;
     &_grid {
         display: grid;
         grid-template-columns: 400px 670px;

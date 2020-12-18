@@ -1,6 +1,7 @@
 .contacts {
     padding: 120px 0 90px 0;
     background-color: var(--bg-color, #ECECEC);
+    overflow: hidden;
     &__grid {
         padding: 0 35px 0 52px;
         display: grid;
