@@ -32,11 +32,34 @@ const   html           = document.querySelector('html'),
 // });
 
 function addClassActive(elem) {
-    elem.classList.add('active');
+    if (!elem.classList.contains('active')) {
+        elem.classList.add('active');
+    }
 }
 function removeClassActive(elem) {
-    elem.classList.remove('active');
+    if (elem.classList.contains('active')) {
+        elem.classList.remove('active');
+    }
 }
+function showElement(elem) {
+    addClassActive(elem);
+    setTimeout(function() {
+        if (!elem.classList.contains('fadeIn')) {
+            elem.classList.add('fadeIn');
+            elem.classList.remove('fadeOut');
+        }
+    }, 500);
+}
+function hideElement(elem) {
+    elem.classList.add('fadeOut');
+    clearInterval();
+    setTimeout(function() {
+        removeClassActive(elem);
+        elem.classList.remove('fadeIn');
+        elem.classList.remove('fadeOut');
+    }, 1000);
+}
+
 
 munuNight.addEventListener('click', () => {
     html.classList.toggle('__night-theme');
@@ -62,13 +85,17 @@ counters.forEach( (item, i) => {
 
 modalWindowBtn.forEach( (item, i) => {
     item.addEventListener('click', () => {
-        modalWindow.style.display = "none";
+        hideElement(modalWindow);
+        hideElement(modalSuccess);
+        hideElement(modalError);
     });
 });
 
 window.onclick = function(event) {
-    if (event.target == modalWindow) {
-        modalWindow.style.display = "none";
+    if (event.target === modalWindow) {
+        hideElement(modalWindow);
+        hideElement(modalSuccess);
+        hideElement(modalError);
     }
     if (event.target == menuOverlay) {
         removeClassActive(menu);
@@ -91,16 +118,20 @@ function send(event, php) {
             if (json.result == "success") {
                 // Если сообщение отправлено
                 // alert("Сообщение отправлено");
-                modalWindow.style.display = "block";
-                modalSuccess.style.display = "flex";
+                showElement(modalWindow);
+                showElement(modalSuccess);
             } else {
                 // Если произошла ошибка
                 // alert("Ошибка. Сообщение не отправлено");
-                modalWindow.style.display = "block";
-                modalError.style.display = "flex";
+                showElement(modalWindow);
+                showElement(modalError);
             }
         // Если не удалось связаться с php файлом
-        } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
+        } else {
+            // alert("Ошибка сервера. Номер: "+req.status);
+            showElement(modalWindow);
+            showElement(modalError);
+        }}; 
     
     // Если не удалось отправить запрос. Стоит блок на хостинге
     req.onerror = function() {alert("Ошибка отправки запроса");};

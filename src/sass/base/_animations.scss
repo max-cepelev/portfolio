@@ -29,6 +29,14 @@
         opacity: 1;
     }
 }
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -59,19 +67,6 @@
         transform: translate3d(0, 0, 0);
     }
 }
-@keyframes themesIn {
-    from {
-        left: -30px;
-        top: 20px;
-    }
-    50% {
-        top: -5px;
-    }
-    to {
-        left: 3%;
-        top: 20px;
-    }
-}
 @keyframes fadeInCircle {
     from {
         width: 0px;
@@ -80,19 +75,6 @@
     to {
         width: 36px;
         height: 36px;
-    }
-}
-@keyframes themesOut{
-    from {
-        left: 3%;
-        top: 20px;
-    }
-    50% {
-        top: 45px;
-    }
-    to {
-        left: -30px;
-        top: 20px;
     }
 }
 @keyframes typeWriter {
@@ -132,59 +114,40 @@
 .active {
     &.fadeInRight {
         opacity: 0;
-        animation-name: fadeInRight;
-        animation-duration: 1.3s;
-        animation-fill-mode: forwards;
+        animation: fadeInRight 1.3s forwards;
     }
     &.fadeInLeft {
         opacity: 0;
-        animation-name: fadeInLeft;
-        animation-duration: 1.3s;
-        animation-fill-mode: forwards;
+        animation: fadeInLeft 1.3s forwards;
     }
     &.fadeInUp {
-        animation-name: fadeInUp;
-        animation-duration: .5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-out;
+        animation: fadeInUp .5s ease-out forwards;
     }
     &.fadeIn {
-        opacity: 0;
-        animation-name: fadeIn;
-        animation-duration: 1.5s;
-        animation-fill-mode: forwards;
+        animation: fadeIn 1.5s ease-out forwards;
+    }
+    &.fadeOut {
+        animation: fadeOut 1s ease-out forwards;
     }
 
     &.promoBtn {
         transform: translateX(-150px);
-        animation-name: promoBtn;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease;
+        animation: promoBtn 1s ease forwards;
         z-index: -1;
     }
     &.promoBtnMain {
         transform: rotateX(90deg);
         transform-style: preserve-3d;
-        animation-name: promoBtnMain;
-        animation-duration: 1.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease;
+        animation: promoBtnMain 1.5s ease forwards;
         z-index: 1;
     }
 
     &.lineSkills {
-        animation-name: lineSkills;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-out;
+        animation: lineSkills 2s ease-out forwards;
     }
     &.line_horizontal {
         &:before {
-            animation-name: line_horizontal;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-            animation-timing-function: linear;
+            animation: line_horizontal 1s linear forwards;
             z-index: 1;
         }
     }
