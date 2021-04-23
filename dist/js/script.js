@@ -1,12 +1,12 @@
 const   html           = document.querySelector('html'),
         promo          = html.querySelector('.promo'),
         humburger      = promo.querySelector('.humburger'),
-        // dayBtn         = promo.querySelector('.day'),
-        // nightBtn       = promo.querySelector('.night'),
         menu           = html.querySelector('.menu'),
         menuItem       = menu.querySelectorAll('.menu__link'),
         menuOverlay    = menu.querySelector('.menu__overlay'),
-        munuNight      = menu.querySelector('.menu__night'),
+        menuTheme      = menu.querySelector('.menu__night'),
+        menuDay        = menu.querySelector('.day'),
+        menuNight      = menu.querySelector('.night'),
         closeElem      = menu.querySelector('.menu__close'),
         counters       = html.querySelectorAll('.skills__levels-percent'),
         lines          = html.querySelectorAll('.skills__levels-line span'),
@@ -15,33 +15,18 @@ const   html           = document.querySelector('html'),
         modalError     = modalWindow.querySelector('#error'),
         modalWindowBtn = modalWindow.querySelectorAll('#thanks button');
 
-// nightBtn.addEventListener('click', () => {
-//     dayBtn.classList.add('active');
-//     dayBtn.classList.remove('disactive');
-//     nightBtn.classList.remove('active');
-//     nightBtn.classList.add('disactive');
-//     html.classList.remove('__night-theme');
-// });
 
-// dayBtn.addEventListener('click', () => {
-//     nightBtn.classList.add('active');
-//     nightBtn.classList.remove('disactive');
-//     dayBtn.classList.remove('active');
-//     dayBtn.classList.add('disactive');
-//     html.classList.add('__night-theme');
-// });
-
-function addClassActive(elem) {
+addClassActive = (elem) => {
     if (!elem.classList.contains('active')) {
         elem.classList.add('active');
     }
 }
-function removeClassActive(elem) {
+removeClassActive = (elem) => {
     if (elem.classList.contains('active')) {
         elem.classList.remove('active');
     }
 }
-function showElement(elem) {
+showElement = (elem) => {
     addClassActive(elem);
     setTimeout(function() {
         if (!elem.classList.contains('fadeIn')) {
@@ -50,7 +35,7 @@ function showElement(elem) {
         }
     }, 500);
 }
-function hideElement(elem) {
+hideElement = (elem) => {
     elem.classList.add('fadeOut');
     clearInterval();
     setTimeout(function() {
@@ -60,13 +45,37 @@ function hideElement(elem) {
     }, 1000);
 }
 
+let theme;
 
-munuNight.addEventListener('click', () => {
+if (localStorage.getItem('theme')) {
+    theme = localStorage.getItem('theme');
+} else {
+    theme = 'day';
+    menuNight.classList.add('active');
+    localStorage.setItem('theme', 'day');
+}
+
+if (theme === 'night') {
+    html.classList.add('__night-theme');
+    menuDay.classList.add('active');
+} else {
+    menuNight.classList.add('active')
+};
+
+menuTheme.addEventListener('click', () => {
     html.classList.toggle('__night-theme');
+    menuDay.classList.toggle('active');
+    menuNight.classList.toggle('active');
+    if (html.classList.contains('__night-theme')) {
+        localStorage.setItem('theme', 'night')
+    } else {
+        localStorage.setItem('theme', 'day')
+    }
 });
 
 humburger.addEventListener('click', () => {
     addClassActive(menu);
+    document.body.style.overflow = 'hidden';
 });
 
 closeElem.addEventListener('click', () => {
@@ -76,6 +85,7 @@ closeElem.addEventListener('click', () => {
 menuItem.forEach(item => {
     item.addEventListener('click', () => {
         removeClassActive(menu);
+        document.body.style.overflow = '';
     });
 });
 
@@ -99,6 +109,7 @@ window.onclick = function(event) {
     }
     if (event.target == menuOverlay) {
         removeClassActive(menu);
+        document.body.style.overflow = '';
     }
 };
 

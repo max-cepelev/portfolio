@@ -111,6 +111,16 @@
         transform: none;
     }
 }
+@keyframes themeIn {
+    from {
+        opacity: 0;
+        transform: rotate(180deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+}
 .active {
     &.fadeInRight {
         opacity: 0;
@@ -193,10 +203,10 @@
     &.s5 {
         animation-delay: 5s;
     }
-    &.s9-5 {
-        animation-delay: 9.5s;
+    &.s7-5 {
+        animation-delay: 7.5s;
     }
-    &.s10 {
-        animation-delay: 10s;
+    &.s8 {
+        animation-delay: 8s;
     }
 }
